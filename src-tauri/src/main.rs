@@ -7,7 +7,7 @@ use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
 use tauri::menu::{Menu, MenuItem};
 use tauri::{Manager, State, WindowEvent};
-use tauri_plugin_autostart::{MacosLauncher, ManagerExt};
+use tauri_plugin_autostart::{Builder as AutostartBuilder, MacosLauncher, ManagerExt};
 
 fn default_buttons() -> HashMap<String, String> {
     let mut buttons = HashMap::new();
@@ -209,7 +209,12 @@ fn main() {
                 let _ = window.hide();
             }
         })
-        .plugin(tauri_plugin_autostart::init(MacosLauncher::LaunchAgent, None))
+        .plugin(
+            AutostartBuilder::new()
+                .app_name("Edit Mouse")
+                .macos_launcher(MacosLauncher::AppleScript)
+                .build(),
+        )
         .on_menu_event(|app, event| {
             let item_id = event.id().as_ref();
             if item_id == "tray_show" {
