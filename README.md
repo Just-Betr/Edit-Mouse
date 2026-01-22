@@ -23,7 +23,7 @@ cargo run
 ```
 
 ## Notes
-- macOS global remapping uses an event tap and requires Input Monitoring permission.
+- macOS global remapping uses a HID event tap and requires Input Monitoring permission; Accessibility alone is not sufficient for intercepting mouse buttons.
 - Windows and Linux (X11) support may be added later if needed.
 - Built primarily because Safari blocks Mouse 4/5 navigation by default.
 
