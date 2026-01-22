@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Mouse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-theme="system" data-tauri-drag-region>
+    <main class="app-card" role="application" aria-label="Edit Mouse settings" data-tauri-drag-region>
+      <header class="app-header" data-tauri-drag-region>
+        <div class="app-title">
+          <div class="app-icon-wrap" aria-hidden="true">
+            <img
+              class="app-icon icon-dark"
+              src="https://www.figma.com/api/mcp/asset/bfa56426-608c-4c7e-b8f5-9a0a70628c27"
+              alt=""
+            />
+            <img
+              class="app-icon icon-light"
+              src="https://www.figma.com/api/mcp/asset/d9b70797-071e-4a26-ae78-d675b5c4f01b"
+              alt=""
+            />
+          </div>
+          <div>
+            <h1>Edit Mouse</h1>
+            <p>Configure your mouse settings</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="app-content" data-tauri-drag-region>
+        <section class="panel panel-device">
+          <h2>Mouse Device</h2>
+          <div class="row">
+            <span class="label">Select Device</span>
+            <label class="select" data-tauri-drag-region="false">
+              <select id="device-select" aria-label="Select device" data-tauri-drag-region="false">
+                <option selected>Loading...</option>
+              </select>
+              <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </label>
+          </div>
+        </section>
+
+        <div class="divider" role="presentation"></div>
+
+        <section class="panel panel-config config-block">
+          <h2>Button Configuration</h2>
+          <div class="rows">
+            <div class="row">
+              <span class="label">Left Button</span>
+              <label class="select" data-tauri-drag-region="false">
+                <select aria-label="Left button action" data-tauri-drag-region="false" data-button="left">
+                  <option selected>Default</option>
+                </select>
+                <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </label>
+            </div>
+            <div class="row">
+              <span class="label">Right Button</span>
+              <label class="select" data-tauri-drag-region="false">
+                <select aria-label="Right button action" data-tauri-drag-region="false" data-button="right">
+                  <option selected>Default</option>
+                </select>
+                <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </label>
+            </div>
+            <div class="row">
+              <span class="label">Middle Button</span>
+              <label class="select" data-tauri-drag-region="false">
+                <select aria-label="Middle button action" data-tauri-drag-region="false" data-button="middle">
+                  <option selected>Default</option>
+                </select>
+                <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </label>
+            </div>
+            <div class="row">
+              <span class="label">Button 4</span>
+              <label class="select" data-tauri-drag-region="false">
+                <select aria-label="Button 4 action" data-tauri-drag-region="false" data-button="button4">
+                  <option selected>Default</option>
+                </select>
+                <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </label>
+            </div>
+            <div class="row">
+              <span class="label">Button 5</span>
+              <label class="select" data-tauri-drag-region="false">
+                <select aria-label="Button 5 action" data-tauri-drag-region="false" data-button="button5">
+                  <option selected>Default</option>
+                </select>
+                <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Appearance</h2>
+          <div class="row">
+            <span class="label">Theme</span>
+            <label class="select" data-tauri-drag-region="false">
+              <select id="theme-select" aria-label="Theme" data-tauri-drag-region="false">
+                <option value="system" selected>Use System</option>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+              </select>
+              <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </label>
+          </div>
+        </section>
+
+        <div class="divider" role="presentation"></div>
+
+        <section class="panel">
+          <h2>Startup Settings</h2>
+          <label class="checkbox" data-tauri-drag-region="false">
+            <input type="checkbox" id="startup-toggle" data-tauri-drag-region="false" />
+            <span class="checkbox-box" aria-hidden="true"></span>
+            <span>Run Edit Mouse at startup</span>
+          </label>
+        </section>
+      </section>
+
+      <footer class="app-footer" data-tauri-drag-region>
+        <span class="version">Edit Mouse v1.0.0</span>
+        <button class="primary-button" type="button" data-tauri-drag-region="false">
+          Save &amp; Close
+        </button>
+      </footer>
+    </main>
+
+    <script>
+      const themeSelect = document.getElementById("theme-select");
+      const deviceSelect = document.getElementById("device-select");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const configBlock = document.querySelector(".config-block");
+      const buttonSelects = Array.from(document.querySelectorAll("select[data-button]"));
+      const startupToggle = document.getElementById("startup-toggle");
+      const saveButton = document.querySelector(".primary-button");
+      const appCard = document.querySelector(".app-card");
+      const actions = [
+        "Default",
+        "Disabled",
+        "Back",
+        "Forward",
+        "Middle Click",
+        "Double Click",
+      ];
+
+      const applyTheme = (value) => {
+        themeSelect.value = value;
+        document.body.dataset.theme = value;
+        const resolved = value === "system" ? (prefersDark.matches ? "dark" : "light") : value;
+        if (value === "system") {
+          document.body.dataset.theme = resolved;
+          document.body.dataset.themeMode = "system";
+        } else {
+          document.body.dataset.themeMode = "manual";
+        }
+      };
+
+      const invoke = window.__TAURI__?.core?.invoke;
+      const defaultSettings = {
+        theme: "system",
+        startup: false,
+        selected_device: null,
+        devices: {},
+      };
+      const defaultButtons = {
+        left: "Default",
+        right: "Default",
+        middle: "Default",
+        button4: "Default",
+        button5: "Default",
+      };
+      let isLoading = true;
+      let currentSettings = JSON.parse(JSON.stringify(defaultSettings));
+      let deviceList = [];
+      let activeDeviceId = null;
+
+      const saveSettings = async () => {
+        if (!currentSettings || !invoke) {
+          return;
+        }
+        try {
+          await invoke("save_settings", { settings: currentSettings });
+        } catch (error) {
+          console.error("Failed to save settings:", error);
+        }
+      };
+
+      const syncAutostart = async (enabled) => {
+        if (!invoke) {
+          return;
+        }
+        try {
+          await invoke("set_autostart_enabled", { enabled });
+        } catch (error) {
+          console.error("Failed to update autostart:", error);
+        }
+      };
+
+      const applySettings = (settings) => {
+        currentSettings = settings;
+        if (!currentSettings.devices) {
+          currentSettings.devices = {};
+        }
+        if (currentSettings.selected_device === undefined) {
+          currentSettings.selected_device = null;
+        }
+        if (!currentSettings.theme) {
+          currentSettings.theme = "system";
+        }
+        if (currentSettings.startup === undefined) {
+          currentSettings.startup = false;
+        }
+        applyTheme(settings.theme);
+        startupToggle.checked = settings.startup;
+      };
+
+      const setLoading = (loading) => {
+        isLoading = loading;
+        themeSelect.disabled = loading;
+        startupToggle.disabled = loading;
+        deviceSelect.disabled = loading;
+        configBlock.classList.toggle("is-disabled", loading);
+        saveButton.disabled = loading;
+        buttonSelects.forEach((select) => {
+          select.disabled = loading;
+        });
+        if (loading) {
+          deviceSelect.innerHTML = "";
+          const option = document.createElement("option");
+          option.value = "";
+          option.textContent = "Loading...";
+          option.selected = true;
+          deviceSelect.append(option);
+        }
+      };
+
+      const loadSettings = async () => {
+        if (!invoke) {
+          applySettings(defaultSettings);
+          return;
+        }
+        try {
+          const settings = await invoke("get_settings");
+          applySettings(settings);
+          await syncAutostart(settings.startup);
+        } catch (error) {
+          console.error("Failed to load settings:", error);
+          applySettings(defaultSettings);
+        }
+      };
+
+      const refreshDevices = async () => {
+        if (!invoke) {
+          deviceList = [];
+          return;
+        }
+        try {
+          deviceList = await invoke("get_mouse_devices");
+          console.log("mouse devices", deviceList);
+        } catch (error) {
+          console.error("Failed to fetch mouse devices:", error);
+        }
+      };
+
+      const populateActions = () => {
+        buttonSelects.forEach((select) => {
+          select.innerHTML = "";
+          actions.forEach((action) => {
+            const option = document.createElement("option");
+            option.value = action;
+            option.textContent = action;
+            select.append(option);
+          });
+        });
+      };
+
+      const applyButtons = (buttons) => {
+        buttonSelects.forEach((select) => {
+          const key = select.dataset.button;
+          select.value = buttons[key] || defaultButtons[key];
+        });
+      };
+
+      const setConfigDisabled = (disabled) => {
+        configBlock.classList.toggle("is-disabled", disabled);
+        buttonSelects.forEach((select) => {
+          select.disabled = disabled || isLoading;
+        });
+      };
+
+      const ensureDeviceConfig = (deviceId, name, persist) => {
+        if (!currentSettings.devices[deviceId]) {
+          currentSettings.devices[deviceId] = {
+            name,
+            buttons: { ...defaultButtons },
+          };
+          if (persist) {
+            saveSettings();
+          }
+        } else if (name && currentSettings.devices[deviceId].name !== name) {
+          currentSettings.devices[deviceId].name = name;
+          if (persist) {
+            saveSettings();
+          }
+        }
+        return currentSettings.devices[deviceId];
+      };
+
+      const syncDeviceSelection = () => {
+        if (!currentSettings) {
+          return;
+        }
+        deviceSelect.innerHTML = "";
+
+        if (deviceList.length === 0) {
+          const option = document.createElement("option");
+          option.value = "";
+          option.textContent = "No device detected";
+          option.selected = true;
+          deviceSelect.append(option);
+          deviceSelect.disabled = true;
+          activeDeviceId = null;
+          setConfigDisabled(true);
+          return;
+        }
+
+        const selectedId = currentSettings.selected_device;
+        const selectedDevice = selectedId
+          ? deviceList.find((device) => device.id === selectedId)
+          : null;
+
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "Select Device";
+        placeholder.selected = !selectedDevice;
+        placeholder.disabled = true;
+        deviceSelect.append(placeholder);
+
+        deviceList.forEach((device) => {
+          const option = document.createElement("option");
+          option.value = device.id;
+          option.textContent = device.name;
+          deviceSelect.append(option);
+        });
+
+        if (selectedDevice) {
+          deviceSelect.value = selectedDevice.id;
+          activeDeviceId = selectedDevice.id;
+          const config = ensureDeviceConfig(selectedDevice.id, selectedDevice.name, false);
+          applyButtons(config.buttons);
+          setConfigDisabled(false);
+        } else {
+          deviceSelect.value = "";
+          activeDeviceId = null;
+          setConfigDisabled(true);
+        }
+      };
+
+      populateActions();
+      setLoading(true);
+      Promise.all([loadSettings(), refreshDevices()]).finally(() => {
+        setLoading(false);
+        syncDeviceSelection();
+      });
+
+      themeSelect.addEventListener("change", (event) => {
+        if (isLoading) {
+          return;
+        }
+        currentSettings.theme = event.target.value;
+        applyTheme(event.target.value);
+        saveSettings();
+      });
+
+      prefersDark.addEventListener("change", () => {
+        if (themeSelect.value === "system") {
+          applyTheme("system");
+        }
+      });
+
+      deviceSelect.addEventListener("change", (event) => {
+        if (isLoading) {
+          return;
+        }
+        const selectedId = event.target.value;
+        if (!selectedId) {
+          activeDeviceId = null;
+          setConfigDisabled(true);
+          return;
+        }
+        const device = deviceList.find((item) => item.id === selectedId);
+        if (!device) {
+          activeDeviceId = null;
+          setConfigDisabled(true);
+          return;
+        }
+        currentSettings.selected_device = selectedId;
+        activeDeviceId = selectedId;
+        const config = ensureDeviceConfig(selectedId, device.name, true);
+        applyButtons(config.buttons);
+        setConfigDisabled(false);
+        saveSettings();
+      });
+
+      buttonSelects.forEach((select) => {
+        select.addEventListener("change", (event) => {
+          const key = event.target.dataset.button;
+          if (isLoading) {
+            return;
+          }
+          if (!activeDeviceId) {
+            return;
+          }
+          const config = ensureDeviceConfig(activeDeviceId, "", false);
+          config.buttons[key] = event.target.value;
+          saveSettings();
+        });
+      });
+
+      startupToggle.addEventListener("change", (event) => {
+        if (isLoading) {
+          return;
+        }
+        currentSettings.startup = event.target.checked;
+        saveSettings();
+        syncAutostart(event.target.checked);
+      });
+
+      saveButton.addEventListener("click", async () => {
+        if (!invoke) {
+          return;
+        }
+        try {
+          await invoke("hide_window");
+        } catch (error) {
+          console.error("Failed to hide window:", error);
+        }
+      });
+
+      document.addEventListener("pointerdown", async () => {
+        const tauriWindow = window.__TAURI__?.window;
+        const currentWindow =
+          (await tauriWindow?.getCurrentWindow?.()) || tauriWindow?.appWindow || null;
+        if (currentWindow?.startDragging) {
+          try {
+            await currentWindow.startDragging();
+          } catch (error) {
+            console.error("Failed to start dragging:", error);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

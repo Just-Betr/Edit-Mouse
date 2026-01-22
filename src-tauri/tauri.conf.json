@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Edit Mouse",
+  "version": "0.1.0",
+  "identifier": "com.betr.editmouse",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "trayIcon": {
+      "id": "main",
+      "iconPath": "icons/icon-tray.png",
+      "iconAsTemplate": true,
+      "showMenuOnLeftClick": true,
+      "tooltip": "Edit Mouse"
+    },
+    "windows": [
+      {
+        "label": "main",
+        "title": "Edit Mouse",
+        "width": 448,
+        "height": 825,
+        "minWidth": 448,
+        "minHeight": 825,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "backgroundColor": "#00000000"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.png"
+    ],
+    "macOS": {
+      "bundleName": "Edit Mouse",
+      "infoPlist": "Info.plist"
+    }
+  }
+}
